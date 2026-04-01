@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Mania - Reviews</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script type="module" src="./app.js"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen">
+  <div class="flex flex-col gap-6 max-w-7xl mx-auto px-4 py-6">
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white p-4 rounded-2xl shadow-lg">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🎬</span>
+          <h1 class="text-3xl font-bold tracking-tight">Movie Mania</h1>
+        </div>
+        <span class="text-slate-400 text-sm hidden sm:block">Discover & Review Movies</span>
+      </div>
+    </nav>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-slate-100">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-slate-500 text-sm font-medium uppercase tracking-wide">Total Movies</p>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span class="text-3xl font-bold text-slate-800" id="totalMovie"></span>
+              <span class="text-slate-400 text-lg">films</span>
+            </div>
+          </div>
+          <div class="bg-blue-100 p-3 rounded-xl">
+            <span class="text-2xl">🎞️</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-slate-100">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-slate-500 text-sm font-medium uppercase tracking-wide">Total Reviews</p>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span class="text-3xl font-bold text-slate-800" id="totalReview"></span>
+              <span class="text-slate-400 text-lg">reviews</span>
+            </div>
+          </div>
+          <div class="bg-purple-100 p-3 rounded-xl">
+            <span class="text-2xl">💬</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-slate-100">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-slate-500 text-sm font-medium uppercase tracking-wide">Average Rating</p>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span class="text-3xl font-bold text-slate-800" id="avgRating"></span>
+              <span class="text-slate-400 text-lg">/ 5</span>
+            </div>
+          </div>
+          <div class="bg-yellow-100 p-3 rounded-xl">
+            <span class="text-2xl">⭐</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">📝</span>
+          <h2 class="text-2xl font-bold text-slate-800">Movie Reviews</h2>
+        </div>  
+        <div class="flex flex-wrap gap-2">
+          <button id="sortRating" class="px-5 py-2.5 bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 sortByRatingBtn cursor-pointer">
+            <span>📊</span> Sort by Rating
+          </button>
+          <button id="groupByMovie" class="px-5 py-2.5 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 groupByMovieBtn cursor-pointer">
+            <span>🎬</span> Group by Movie
+          </button>
+          <button class="resetBtn px-5 py-2.5 bg-amber-500 text-white rounded-xl font-medium hover:bg-amber-600 hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer">
+            <span>🔄</span> Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews Container -->
+    <div class="flex flex-col gap-4" id="movieReview">
+    </div>
+  </div>
+</body>
+</html>
